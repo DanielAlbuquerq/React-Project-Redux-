@@ -8,29 +8,22 @@ import * as Styles from "./styles";
 
 //Hook to access Reducer data
 import {useSelector, useDispatch} from "react-redux";
-import {UserActionTypes} from "../../redux/user/actions-types";
+import {loginUser, signOutUser} from "../../redux/user/actions";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
-
   const {currentUser} =  useSelector(rootReducer => rootReducer.UserReducer)
   const dispatch = useDispatch()
 
   console.log({currentUser})
 
   const handleLoginClick = () => {
-    dispatch({
-      type: UserActionTypes.LOGIN,
-      payload: {name: "Daniel", email:"daniel_daniel@daniel.daniel"}
-    })
+    dispatch(loginUser({name: "daniel", email:"daniel@daniel.com"}))
     console.log('handleLoginClick clicked')
   } 
 
   const handleSignOutClick = () => {
-    dispatch({
-      type: UserActionTypes.SignOut,
-      payload: {name: "Daniel", email:"daniel_daniel@daniel.daniel"}
-    })
+    dispatch(signOutUser())
     console.log('handleSigOutClick clicked')
   } 
 
