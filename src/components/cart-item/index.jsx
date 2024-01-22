@@ -3,8 +3,13 @@ import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 // Styles
 import * as Styles from "./styles";
 
-const CartItem = ({ product }) => {
-  const handleRemoveClick = () => {};
+import { removeProductFrCart } from "../../redux/cart/actions";
+
+// const CartItem = ({ product }) => {
+//   const handleRemoveClick = (products) => {
+//     products.sort
+//   };
+
 
   const handleIncreaseClick = () => {};
 
