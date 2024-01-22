@@ -48,8 +48,11 @@ const cartReducer = (state = initialState, action) => {
         case CartActionTypes.DECREASE_PRODUCT:
             return{
                 ...state,
-                products: state.products.f
-            }
+                products: state.products.map(product => product.id === action.payload 
+                    ? {...product, quantity: product.quantity - 1}
+                    : product
+                ).filter(product => product.quantity > 0)
+            };
 
         default:
             return state;
