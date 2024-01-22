@@ -10,6 +10,15 @@ export const removeProductFrCart = (payload) => ({
     payload,
 });
 
+export const increaseProduct = (payload) => ({
+    type: CartActionTypes.INCREASE_PRODUCT,
+    payload,
+});
+
+export const decreaseProduct = (payload) => ({
+    type: CartActionTypes.DECREASE_PRODUCT,
+    payload,
+});
 
 
 
