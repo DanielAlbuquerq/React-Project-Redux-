@@ -10,6 +10,7 @@ import * as Styles from "./styles";
 import {useSelector, useDispatch} from "react-redux";
 import {loginUser, signOutUser} from "../../redux/user/actions";
 import rootReducer from "../../redux/root-reducer";
+import { selectProductsCount } from "../../redux/cart/cart.selector";
 
 function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
@@ -17,11 +18,11 @@ function Header() {
   const {currentUser} =  useSelector(rootReducer => rootReducer.UserReducer);
   const {products} = useSelector(rootReducer => rootReducer.cartReducer);
 
+  const productsCount = useSelector(selectProductsCount)
+
   const dispatch = useDispatch()
 
-  const productsCount = useMemo(() => {
-    return products.reduce((acc, curr) => acc + curr.quantity, 0)
-  }, [products]) 
+  
 
   const handleLoginClick = () => {
     dispatch(loginUser({name: "daniel", email:"daniel@daniel.com"}))
