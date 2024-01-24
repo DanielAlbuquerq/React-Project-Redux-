@@ -16,13 +16,12 @@ function Header() {
   const [cartIsVisible, setCartIsVisible] = useState(false);
 
   const {currentUser} =  useSelector(rootReducer => rootReducer.UserReducer);
+
   const {products} = useSelector(rootReducer => rootReducer.cartReducer);
 
   const productsCount = useSelector(selectProductsCount)
 
   const dispatch = useDispatch()
-
-  
 
   const handleLoginClick = () => {
     dispatch(loginUser({name: "daniel", email:"daniel@daniel.com"}))
