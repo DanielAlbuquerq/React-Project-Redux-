@@ -6,8 +6,9 @@ import CustomButton from "../custom-button/index";
 // Styles
 import * as Styles from "./styles";
 
-//Redux Actions
+//Redux Actions Dispatch
 import { useDispatch } from "react-redux";
+
 // import { addProductToCart } from "../../redux/cart/actions";
 import {addProduct} from "../../redux/cart/slice"
 const ProductItem = ({ product }) => {

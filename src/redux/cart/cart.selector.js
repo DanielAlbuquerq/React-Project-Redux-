@@ -1,4 +1,4 @@
-import rootReducer from "../root-reducer";
+// import rootReducer from "../root-reducer";
 
 export const selectProductsCount = (rootReducer) => {
     return rootReducer.cartReducer.products.reduce(
